@@ -1,14 +1,16 @@
-html {
-  font-size: 10px;
-  font-family: sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main.w-5\/6.h-fit.bg-gradient-to-b.from-secondary-1.via-secondary-1.to-secondary-2 {
+    height: fit-content;
+    margin-left: 16.66667%;
 }
 
-* {
-  margin: 0;
-  padding: 0;
+.sidebar{
+    position: fixed;
 }
 
-#root {
-  width: 100vw;
-  height: 100vh;
+body{
+    overflow-x: hidden;
 }

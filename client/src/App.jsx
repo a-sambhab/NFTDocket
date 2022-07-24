@@ -1,25 +1,20 @@
-import { EthProvider } from "./contexts/EthContext";
-import Intro from "./components/Intro/";
-import Setup from "./components/Setup";
-import Demo from "./components/Demo";
-import Footer from "./components/Footer";
-import "./App.css";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Approve from "./pages/Approve";
+import Buyer from "./pages/Buyer";
+import Landing from "./pages/Landing";
+import Seller from "./pages/Seller"
 
 function App() {
   return (
-    <EthProvider>
-      <div id="App" >
-        <div className="container">
-          <Intro />
-          <hr />
-          <Setup />
-          <hr />
-          <Demo />
-          <hr />
-          <Footer />
-        </div>
-      </div>
-    </EthProvider>
+    <>
+      <Routes>
+        <Route path="/" element={<Landing/>}/>
+        <Route path="/seller" element={<Seller/>}/>
+        <Route path="/buyer" element={<Buyer/>}/>
+        <Route path="/approve/:warrantyID" element={<Approve/>}/>
+      </Routes>
+    </>
   );
 }
 

@@ -22,32 +22,44 @@ contract NFTWarranty is ERC721URIStorage {
         uint256 tokenId;
         bytes32 verifyHash;
         uint256 creationTime;
+        string  productId;
         uint256 expiry;
         address[]buyers;
         uint256[]buyersDate;
+        NFTStatus status;
     }
     //verify ownership
-
+    enum NFTStatus{
+        Pending,
+        Verified,
+        Active,
+        Expired
+    }
     
-     uint256 [] public totalSellers;
-
+    uint256 [] public totalSellers;
+    mapping (address=>uint256) public addressToSellerId;
     mapping(uint256=>seller) public allSellers;
     mapping(uint256=>mapping(uint256=>warrantyDetails)) public sellerWarrantyDetails;
-
     mapping(uint256=>mapping(uint256=>string)) public tokenURIList;
+    mapping (address=>uint256[]) public buyersCollection;
 
-    function verifyOwnership(string memory productId,uint256 sellerId,uint256 tokenId)public view returns(bool){
+    function verifyOwnership(string memory productId,uint256 sellerId,uint256 tokenId)public returns(bool){
         //require(sellerWarrantyDetails[sellerId][tokenId].verifyHash!=bytes32(0x0),"Item doesn't Exist");
-
+        
         if(sellerWarrantyDetails[sellerId][tokenId].verifyHash==keccak256(abi.encode(msg.sender,productId))){
+            sellerWarrantyDetails[sellerId][tokenId].status = NFTStatus.Verified;
             return true;
+            
         }
         else return false;
     }
-    function claimNMint(string memory productId,uint256 sellerId,uint256 tokenId)public {
-        require(verifyOwnership(productId,sellerId,tokenId)==true,"Not verified");
+    function claimNMint(uint256 sellerId,uint256 tokenId)public {
+        require(sellerWarrantyDetails[sellerId][tokenId].status == NFTStatus.Verified);
         _mint(msg.sender,tokenId);
-        _setTokenURI(tokenId,tokenURIList[sellerId][tokenId]);  
+        _setTokenURI(tokenId,tokenURIList[sellerId][tokenId]); 
+        sellerWarrantyDetails[sellerId][tokenId].status =  NFTStatus.Active;
+ 
+
     }
     function createSeller(uint256 sellerId) public{
         require(allSellers[sellerId].owner==address(0x0),"Seller Already exist");
@@ -55,9 +67,9 @@ contract NFTWarranty is ERC721URIStorage {
          newSeller.id = sellerId;
          newSeller.owner = msg.sender;
          newSeller.itemCounter = 0;
-
          allSellers[sellerId] = newSeller;
          totalSellers.push(sellerId);
+         addressToSellerId[msg.sender] = sellerId;
 
     }
     function createNFT(string memory tokenURI,uint256 sellerId,string memory productId,address customer,uint256 expiry)public{
@@ -71,34 +83,41 @@ contract NFTWarranty is ERC721URIStorage {
       newNFT.expiry =  newNFT.creationTime + expiry;
 
       uint256 Id = allSellers[sellerId].id*1000000+allSellers[sellerId].itemCounter;
-
+        sellerWarrantyDetails[sellerId][Id].productId = productId;
       allSellers[sellerId].allNFTs.push(Id);
       sellerWarrantyDetails[sellerId][Id].tokenId = Id;
       sellerWarrantyDetails[sellerId][Id].verifyHash = keccak256(abi.encode(customer,productId));
       sellerWarrantyDetails[sellerId][Id]=newNFT;
       sellerWarrantyDetails[sellerId][Id].buyers.push(customer);
+      sellerWarrantyDetails[sellerId][Id].status =  NFTStatus.Pending;
       sellerWarrantyDetails[sellerId][Id].buyersDate.push(newNFT.creationTime);
       allSellers[sellerId].itemCounter++;
+      buyersCollection[customer].push(Id);
 
       tokenURIList[sellerId][Id]=tokenURI;
         
     }
     function resell(address to,uint256 tokenId,uint256 sellerId)public{
        require( ownerOf(tokenId)==msg.sender,"Not Owner");
+      sellerWarrantyDetails[sellerId][tokenId].verifyHash = keccak256(abi.encode(to, sellerWarrantyDetails[sellerId][tokenId].productId));
       sellerWarrantyDetails[sellerId][tokenId].buyers.push(to);
       sellerWarrantyDetails[sellerId][tokenId].buyersDate.push(block.timestamp);
 
             _transfer(msg.sender,to,tokenId);
     }
 
-       function burn(uint256 tokenId)public{
-        //require(msg.sender)
+       function burn(uint256 tokenId)external{
+        uint256 sellerId = tokenId/1000000;
+        require(block.timestamp>=sellerWarrantyDetails[sellerId][tokenId].expiry);
         _burn(tokenId);
+        sellerWarrantyDetails[sellerId][tokenId].status =  NFTStatus.Expired;
+
     }
 
 
     //READ Functions
 
+    
  
     function getSellerNFTs(uint256 sellerId) external view returns(uint256[]memory){
         return allSellers[sellerId].allNFTs;
@@ -110,11 +129,12 @@ contract NFTWarranty is ERC721URIStorage {
     function getExpiry (uint256 sellerId,uint256 tokenId)external view returns (uint256 expiry){
         return sellerWarrantyDetails[sellerId][tokenId].expiry;
     }
-      function getCreation (uint256 sellerId,uint256 tokenId)external view returns (uint256 expiry){
+      function getCreation (uint256 sellerId,uint256 tokenId)external view returns (uint256 creation){
         return sellerWarrantyDetails[sellerId][tokenId].creationTime;
     }
-
+    
 
 
 
 }
+ 

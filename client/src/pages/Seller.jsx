@@ -1,5 +1,6 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { NavLink } from 'react-router-dom'
+import Web3Context from '../contexts'
 
 function Navbutton(props) {
   return(
@@ -60,6 +61,7 @@ function ExpiredWarranty(props){
 }
 
 function Seller() {
+  const {connectWallet,account} = useContext(Web3Context);
   return (
     <>
     <div className='flex w-screen h-fit min-h-screen bg-primary overflow-x-hidden'>
@@ -76,8 +78,11 @@ function Seller() {
       <div className='main w-5/6 h-fit min-h-screen bg-gradient-to-b from-secondary-1 via-secondary-1 to-secondary-2'>
         <div className='flex justify-between items-center h-fit py-4'>
           <span className='text-2xl ml-12'>Dashboard</span>
-          <div className='text-white bg-secondary-2 mr-5 w-40 h-10 text-center rounded-xl pt-2'>+ Connect Wallet</div>
-        </div>
+{   account.currentAccount==null  ?    ( <div className='cursor-pointer text-white bg-secondary-2 mr-20 w-40 h-10 text-center rounded-xl pt-2' onClick={connectWallet}>+ Connect Wallet</div>
+):(<div className="mr-8">Hey,{' '}
+{`${String(account.currentAccount).slice(0, 5)}...${String(
+  account.currentAccount
+).slice(String(account.currentAccount).length - 5)}`}</div>)}        </div>
         <div className='w-full h-1/6 flex items-center justify-evenly my-4'> 
           {/* <button className='w-1/4 bg-secondary-3'>Active Warranties: 23</button> */}
           <WarrantyCount head="Active Warranties" count="23"/>

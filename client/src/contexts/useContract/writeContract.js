@@ -7,3 +7,5 @@
     const res = await contract.methods.getSellerNFTs(sellerId).call();
     return res;
   };
+
+  const ge

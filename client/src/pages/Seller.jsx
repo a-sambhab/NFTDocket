@@ -32,7 +32,7 @@ function PendingWarranty(props) {
 function ActiveWarranty(props) {
   return(
     <>
-      <div className='bg-secondary-3 mx-16 h-14 flex justify-between items-center rounded-2xl text-xl my-2'>
+      <NavLink to={`/warranty/${props.id}`} className='bg-secondary-3 mx-16 h-14 flex justify-between items-center rounded-2xl text-xl my-2'>
         <div className='flex justify-center items-center pl-5'>
           <img className='w-10 h-10 rounded-full' src={props.img}/>
           <span className='px-3'>{props.name}</span>
@@ -40,9 +40,23 @@ function ActiveWarranty(props) {
         <span className='pr-12'>{props.status}</span>
         <span className='pr-12'>{props.expiry}</span>
         <span className='pr-5'>#{props.id}</span>
-      </div>
+      </NavLink>
     </>
   );
+}
+function ExpiredWarranty(props){
+  return(
+    <>
+      <NavLink to={`/warranty/${props.id}`} className='bg-secondary-3 mx-16 h-14 flex justify-between items-center rounded-2xl text-xl my-2'>
+        <div className='flex justify-center items-center pl-5'>
+          <img className='w-10 h-10 rounded-full' src={props.img}/>
+          <span className='px-3'>{props.name}</span>
+        </div>
+        <span className='pr-12'>{props.status}</span>
+        <span className='pr-5'>#{props.id}</span>
+      </NavLink>
+    </>
+  )
 }
 
 function Seller() {
@@ -109,8 +123,8 @@ function Seller() {
             <span>Order ID</span>
           </div>
           <div className='flex flex-col justify-evenly'>
-            <PendingWarranty img="https://res.cloudinary.com/dgy8ybeoy/image/upload/v1658402368/6df919637ea1e3a6bf7f6b98022b3b62_npgxgf.jpg" name="Albert Chaini" status="Expired" id="1547854335"/>
-            <PendingWarranty img="https://res.cloudinary.com/dgy8ybeoy/image/upload/v1658402368/6df919637ea1e3a6bf7f6b98022b3b62_npgxgf.jpg" name="Albert Chaini" status="Expired" id="1547854335"/>
+            <ExpiredWarranty img="https://res.cloudinary.com/dgy8ybeoy/image/upload/v1658402368/6df919637ea1e3a6bf7f6b98022b3b62_npgxgf.jpg" name="Albert Chaini" status="Expired" id="1547854335"/>
+            <ExpiredWarranty img="https://res.cloudinary.com/dgy8ybeoy/image/upload/v1658402368/6df919637ea1e3a6bf7f6b98022b3b62_npgxgf.jpg" name="Albert Chaini" status="Expired" id="1547854335"/>
           </div>
         </div>
       </div>

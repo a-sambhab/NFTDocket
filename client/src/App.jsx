@@ -4,6 +4,7 @@ import Approve from "./pages/Approve";
 import Buyer from "./pages/Buyer";
 import Landing from "./pages/Landing";
 import Seller from "./pages/Seller"
+import Warranty from "./pages/Warranty";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/seller" element={<Seller/>}/>
         <Route path="/buyer" element={<Buyer/>}/>
         <Route path="/approve/:warrantyID" element={<Approve/>}/>
+        <Route path="/warranty/:warrantyID" element={<Warranty/>}/>
       </Routes>
     </>
   );

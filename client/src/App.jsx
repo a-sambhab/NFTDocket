@@ -6,6 +6,8 @@ import Landing from "./pages/Landing";
 import Seller from "./pages/Seller"
 import Warranty from "./pages/Warranty";
 import Web3Context from "./contexts";
+import CreateSeller from "./pages/CreateSeller";
+import CreateNFT from "./pages/CreateNFT";
 
 function App() {
   window.ethereum&&window.ethereum.on('accountsChanged', function (accounts) {
@@ -21,8 +23,10 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Landing/>}/>
+        <Route path="/createseller" element={<CreateSeller/>}/>
         <Route path="/seller" element={<Seller/>}/>
         <Route path="/buyer" element={<Buyer/>}/>
+        <Route path="/createnft" element={<CreateNFT/>}/>
         <Route path="/approve/:warrantyID" element={<Approve/>}/>
         <Route path="/warranty/:warrantyID" element={<Warranty/>}/>
       </Routes>

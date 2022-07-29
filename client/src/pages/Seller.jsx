@@ -1,5 +1,5 @@
-import React,{useContext} from 'react'
-import { NavLink } from 'react-router-dom'
+import React,{useContext,useEffect} from 'react'
+import { NavLink,useParams} from 'react-router-dom'
 import Web3Context from '../contexts'
 
 function Navbutton(props) {
@@ -62,6 +62,8 @@ function ExpiredWarranty(props){
 
 function Seller() {
   const {connectWallet,account} = useContext(Web3Context);
+  const {id} = useParams();
+ 
   return (
     <>
     <div className='flex w-screen h-fit min-h-screen bg-primary overflow-x-hidden'>

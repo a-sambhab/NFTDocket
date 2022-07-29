@@ -132,6 +132,10 @@ contract NFTWarranty is ERC721URIStorage {
       function getCreation (uint256 sellerId,uint256 tokenId)external view returns (uint256 creation){
         return sellerWarrantyDetails[sellerId][tokenId].creationTime;
     }
+    function getSellerWarrantyDetails(uint256 sellerId,uint256 tokenId)public view returns(warrantyDetails memory){
+        return sellerWarrantyDetails[sellerId][tokenId] ;
+
+    }
     
 
 

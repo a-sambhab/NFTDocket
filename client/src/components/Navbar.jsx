@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <>
         <div className='w-full h-16 bg-primary fixed flex flex-row justify-end items-center'>
-            <NavLink to='/' className='text-white text-2xl w-full pt-2 h-fit flex justify-start items-center py-2 ml-24'>NFTWeb</NavLink>
+            <NavLink to='/' className='text-white text-2xl w-full pt-2 h-fit flex justify-start items-center py-2 ml-24 font-bold'>NFTWeb</NavLink>
             {   account.currentAccount==null  ?    ( <div className='mr-24 cursor-pointer text-white bg-secondary-2 w-52 h-10 text-center rounded-xl pt-2 px-4' onClick={connectWallet}>+ Connect Wallet</div>
 ):(<div className="w-1/3 flex justify-center items-center mr-24">Hey,{' '}
 {`${String(account.currentAccount).slice(0, 9)}...${String(

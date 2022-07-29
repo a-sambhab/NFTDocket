@@ -68,6 +68,7 @@ function Seller() {
     <div className='flex w-screen h-fit min-h-screen bg-primary overflow-x-hidden'>
       <div className='sidebar w-1/6 h-full flex flex-col items-center' >
         <NavLink to="/" className='text-white text-2xl border-b-2 p-4 w-full h-fit flex justify-center items-center'>NFTWeb</NavLink>
+        <NavLink to="/createnft" className='text-white text-xl w-5/6 h-fit py-4 mt-4 ml-11 hover:bg-secondary-1 active:bg-secondary-1 text-center rounded-l-xl'>Create NFT</NavLink>
         <Navbutton link="#active" content="Active Warranties" />
         <Navbutton link="#pending" content="Pending Warranties" />
         <Navbutton link="#expired" content="Expired Warranties" />
@@ -81,9 +82,9 @@ function Seller() {
           <span className='text-2xl ml-12'>Dashboard</span>
 {   account.currentAccount==null  ?    ( <div className='cursor-pointer text-white bg-secondary-2 mr-20 w-40 h-10 text-center rounded-xl pt-2' onClick={connectWallet}>+ Connect Wallet</div>
 ):(<div className="mr-8">Hey,{' '}
-{`${String(account.currentAccount).slice(0, 5)}...${String(
+{`${String(account.currentAccount).slice(0, 9)}...${String(
   account.currentAccount
-).slice(String(account.currentAccount).length - 5)}`}</div>)}        </div>
+).slice(String(account.currentAccount).length - 9)}`}</div>)}        </div>
         <div className='w-full h-1/6 flex items-center justify-evenly my-4'> 
           {/* <button className='w-1/4 bg-secondary-3'>Active Warranties: 23</button> */}
           <WarrantyCount head="Active Warranties" count="23"/>

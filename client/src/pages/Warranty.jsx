@@ -4,9 +4,6 @@ import { NavLink, useParams } from 'react-router-dom'
 function Warranty() {
     const {warrantyID} = useParams();
     console.log(warrantyID);
-    const Verify = () => {
-        console.log("verifying");
-    }
   return (
     <>
         <div className='w-screen h-screen'>
@@ -22,7 +19,6 @@ function Warranty() {
                         <span className='w-full text-center'>Order ID: 1514444150</span>
                         <span className='w-full text-center'>Owner Address: 11645050222..666666</span>
                         <span className='w-full text-center'>Expiry Date: 29/07/2022</span>
-                        <button className='bg-green-700 rounded-xl w-1/3 text-white m-2' onclick = {Verify}>Verify</button>
                     </div>
                 </div>
             </div>

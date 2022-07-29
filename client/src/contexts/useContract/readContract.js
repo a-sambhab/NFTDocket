@@ -23,7 +23,7 @@ const warrantyDetails = async(contract,address)=>{
     const tokens = await contract.methods.buyersCollection(address).call();
     //const articles = await contract.methods.getArticles().call();
     return await Promise.all(tokens.map(async(_id) => {
-        let sellerId = _id/1000000;
+        let sellerId = Math.round (_id/1000000);
       const {expiry,status,creation } =
       
         await contract.methods.sellerWarrantyDetails(sellerId).call();

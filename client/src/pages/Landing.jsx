@@ -1,29 +1,201 @@
-import React,{useContext} from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
-import Web3Context from '../contexts'
 
+import { Grid, Typography, Box, Button, Stack } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+
+import Navbar from "../components/Navbar";
 
 function Landing() {
-  const {connectWallet,account} = useContext(Web3Context);
-
+  const classes = useStyles();
   return (
     <>
-    <div className='w-screen h-screen'>
-        <div className='w-full h-12 bg-primary fixed flex flex-row justify-end  '>
-            <NavLink to='/' className='text-white text-2xl w-full pt-2 pl-2 h-fit flex justify-start items-center'>NFTWeb</NavLink>
-            {   account.currentAccount==null  ?    ( <div className='cursor-pointer text-white bg-secondary-2 mr-20 w-40 h-10 text-center rounded-xl pt-2' onClick={connectWallet}>+ Connect Wallet</div>
-):(<div className="mr-8 w-1/3 flex justify-center items-center">Hey,{' '}
-{`${String(account.currentAccount).slice(0, 9)}...${String(
-  account.currentAccount
-).slice(String(account.currentAccount).length - 9)}`}</div>)}
-        </div>
-        <div className='w-full h-full  bg-gradient-to-b from-secondary-1 via-secondary-1 to-secondary-2 flex justify-evenly items-center'>
-          <NavLink className='w-1/4 h-1/4 bg-secondary-3 flex justify-center items-center' to='createseller'>Seller</NavLink>
-          <NavLink className='w-1/4 h-1/4 bg-secondary-3 flex justify-center items-center' to='buyer'>Buyer</NavLink>
-        </div>
+    <div>
+        <Navbar />
+        <Box className={classes.heroBox}>
+        <Grid container spacing={6} className={classes.gridContainer}>
+          <Grid item xs={12} md={7}>
+            <Typography
+              variant="h3"
+              fontWeight={700}
+              style={{ color: '#232946' }}
+              className={classes.title}
+            >
+              Vote in your own way
+            </Typography>
+            <Typography
+              variant="h6"
+              style={{ color: '#232946' }}
+              className={classes.subtitle}
+            >
+              Start your process by creating a room, write proposals and make
+              your team register as a VOTEE in the room and make your decisions
+              in a smoother and faster way...
+            </Typography>
+            <Stack
+              sx={{ pt: 4 }}
+              direction="row"
+              spacing={2}
+              justifyContent="left"
+            >
+            <NavLink to='createseller'>
+              <Button variant="contained">Seller</Button>
+              </NavLink>
+              <NavLink to='buyer'>
+              <Button variant="outlined">Buyer</Button>
+              </NavLink>
+            </Stack>
+          </Grid>
+          <Grid item xs={12} md={5}>
+            <img
+              src="https://res.cloudinary.com/sambitsankalp/image/upload/v1655060810/hackathons/image_1_bameyw.png"
+              alt="My Team"
+              className={classes.largeImage}
+            />
+          </Grid>
+        </Grid>
+      </Box>
+        {/* <div className='w-full h-full  bg-gradient-to-b from-secondary-1 via-secondary-1 to-secondary-2 flex justify-evenly items-center'>
+          <NavLink className='w-1/4 h-1/4 bg-blue-50 flex justify-center items-center' to='createseller'>
+            Seller
+          </NavLink>
+          <NavLink className='w-1/4 h-1/4 bg-blue-50 flex justify-center items-center' to='buyer'>Buyer</NavLink>
+        </div> */}
     </div>
     </>
   )
 }
 
 export default Landing
+
+const useStyles = makeStyles((theme) => ({
+  toolBar: {
+    height: '10vh',
+    display: 'flex',
+    justifyContent: 'space-between',
+    padding: '20px',
+    backgroundColor: 'white',
+  },
+  logo: {
+    color: 'blue',
+    cursor: 'pointer',
+  },
+  link: {
+    color: '#000',
+  },
+  menuIcon: {
+    color: '#000',
+  },
+  formContainer: {
+    flexGrow: 1,
+    padding: '10px',
+    maxWidth: '700px',
+    margin: '30px auto',
+    [theme.breakpoints.between('xs', 'sm')]: {
+      width: '100%',
+    },
+  },
+  form: {
+    marginTop: '30px',
+  },
+  formHeading: {
+    textAlign: 'center',
+    marginTop: '40px',
+  },
+  heroBox: {
+    width: '100%',
+    display: 'flex',
+    minHeight: '600px',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  gridContainer: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    maxWidth: '1300px',
+    padding: '50px',
+  },
+  aboutUsContainer: {
+    width: '100%',
+    padding: '50px',
+    display: 'flex',
+    minHeight: '400px',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  aboutUsSubtitle: {
+    opacity: '0.7',
+    paddingBottom: '30px',
+    fontSize: '18px',
+  },
+  title: {
+    paddingBottom: '15px',
+    color: '#232946',
+  },
+  subtitle: {
+    opacity: '0.4',
+    paddingBottom: '30px',
+    color: '#232946',
+  },
+  largeImage: {
+    width: '100%',
+  },
+  sectionGridContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    marginTop: '30px',
+  },
+  sectionGridItem: {
+    backgroundColor: '#fffffe',
+    textAlign: 'center',
+    padding: '50px 30px',
+    width: '200px',
+    borderRadius: '10px',
+    margin: '10px !important',
+  },
+  inputField: {
+    marginBottom: '20px !important',
+  },
+  textArea: {
+    width: '100%',
+    marginBottom: '20px',
+    fontSize: '16px',
+    padding: '10px',
+  },
+  footerContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    miHeight: '10vh',
+    padding: '20px',
+    justifyContent: 'center',
+    backgroundColor: '#f2f0f1',
+    flexDirection: 'column',
+  },
+  footerText: {
+    paddingBottom: '10px',
+  },
+  footerDate: {
+    opacity: '0.4',
+  },
+  testimonialCard: {
+    backgroundColor: '#fff',
+    padding: '10px',
+    minHeight: '200px',
+    display: 'flex',
+    alignItems: 'center',
+  },
+  testimonialStatement: {
+    paddingBottom: '25px',
+  },
+  avatar: {
+    marginRight: '10px',
+  },
+  testimonialPosition: {
+    fontSize: '14px',
+    opacity: '0.6',
+  },
+}));

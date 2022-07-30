@@ -13,11 +13,15 @@ module.exports = {
       colors: {
       'regal-blue': '#243c5a',
       'primary': '#5680E9',
+      'new':'#232946',
+      'new-secondary':'#d4d8f0',
       'secondary': {
         1: '#84CEEB',
         2: '#8860D0',
         3: '#C1C8E4'
       },
+      'tertiary': '#eebbc3',
+      
       },
     },
   },

@@ -25,7 +25,7 @@ function App() {
         <Route path="/" element={<Landing/>}/>
         <Route path="/createseller" element={<CreateSeller/>}/>
         <Route path="/seller/:add" element={<Seller/>}/>
-        <Route path="/buyer" element={<Buyer/>}/>
+        <Route path="/buyer/:add" element={<Buyer/>}/>
         <Route path="/createnft/:add" element={<CreateNFT/>}/>
         <Route path="/approve/:warrantyID" element={<Approve/>}/>
         <Route path="/warranty/:warrantyID" element={<Warranty/>}/>

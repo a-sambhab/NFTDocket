@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import NFTWarranty from '../contracts/NFTWarranty.json';
 import { Web3Context } from './index';
 import Web3 from 'web3';
+import { sellerId } from './useContract/readContract';
 
 const Web3Provider = ({ children }) => {
   //const [chainId,setChain]=useState("")
@@ -11,6 +12,7 @@ const Web3Provider = ({ children }) => {
     currentAccount: null,
   });
   const [Contract, setContract] = useState('');
+  const [sellerI,setSellerId] = useState(0)
 
   // const connectWeb3 = new Promise(async (resolve) => {
   //   const web3 = await getWeb3();
@@ -61,12 +63,13 @@ const Web3Provider = ({ children }) => {
       // console.log('Found an authorized account:', account);
      
       //console.log(chain)
-      getContract(chain);
+      getContract(chain,accounts);
+     
     } else {
       console.log('No authorized account found');
     }
   };
-  const getContract = (chain) => {
+  const getContract = (chain,accounts) => {
     //console.log(provider,signer);
     var web3 = new Web3(window.ethereum);
     
@@ -81,11 +84,20 @@ const Web3Provider = ({ children }) => {
 
     //console.log(instance)
     setContract(instance);
+    seller(instance,accounts[0])
   };
+
+  const seller = async(Contract,acc)=>{
+    // console.log(Contract)
+    // console.log(acc)
+  const res = await sellerId(Contract, acc);
+  console.log(res);
+  setSellerId(res)
+}
 
   return (
     <Web3Context.Provider
-      value={{ connectWallet, checkIfWalletIsConnected, account, Contract }}
+      value={{ connectWallet, checkIfWalletIsConnected, account, Contract,sellerI }}
     >
       {children}
     </Web3Context.Provider>

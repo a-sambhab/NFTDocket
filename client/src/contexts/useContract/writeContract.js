@@ -7,11 +7,11 @@
 
   }
 
-  const createNFT = async(contract,tokenURI,sellerId,productId,customer,expiry,account)=>{
+  const createNFT = async(contract,tokenURI,sellerId,productId,customer,expiry,imageURI,account)=>{
     if (!contract) {
         return false;
       }
-      const res = await contract.methods.createNFT(tokenURI,sellerId,productId,customer,expiry).send({from:account});
+      const res = await contract.methods.createNFT(tokenURI,sellerId,productId,customer,expiry,imageURI).send({from:account});
       return res;
   }
   const resell = async(contract,to,tokenId,sellerId,account)=>{

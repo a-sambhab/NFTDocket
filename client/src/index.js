@@ -4,13 +4,10 @@ import './index.css';
 import App from './App';
 import {BrowserRouter} from 'react-router-dom';
 
-import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 
 
 import Web3Provider from "./contexts/Web3Provider";
 
-let theme = createTheme();
-theme = responsiveFontSizes(theme);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

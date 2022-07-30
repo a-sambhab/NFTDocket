@@ -15,6 +15,13 @@
 
    
 }
+const sellerId = async(contract,address)=>{
+    if (!contract) {
+        return false;
+      }
+    const res = await contract.methods.addressToSellerId(address).call();
+    return res;
+}
 
 const warrantyDetails = async(contract,address)=>{
     if(!contract){
@@ -45,5 +52,6 @@ const getTokenDetails = async(contract,tokenId)=>{
 export{
     getSellerNFTs,
     warrantyDetails,
-    getTokenDetails
+    getTokenDetails,
+    sellerId
 }

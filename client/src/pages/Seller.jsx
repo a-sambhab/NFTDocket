@@ -3,6 +3,7 @@ import { NavLink, useParams } from "react-router-dom";
 import Web3Context from "../contexts";
 import {getSellerNFTs} from "../contexts/useContract/readContract"
 
+
 function Navbutton(props) {
   return (
     <a

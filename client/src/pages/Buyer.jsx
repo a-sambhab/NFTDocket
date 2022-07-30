@@ -66,7 +66,7 @@ function Buyer() {
 
   return (
     <>
-    <div className='flex w-screen h-fit min-h-screen bg-primary overflow-x-hidden'>
+    <div className='bg-new flex w-screen h-fit min-h-screen overflow-x-hidden home '>
       <div className='sidebar w-1/6 h-full flex flex-col items-center' >
         <NavLink to="/" className='text-white text-2xl border-b-2 p-4 w-full h-fit flex justify-center items-center'>NFTWeb</NavLink>
         <Navbutton link="#pending" content="Pending Warranties" />

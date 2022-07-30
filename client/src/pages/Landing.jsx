@@ -55,12 +55,6 @@ function Landing() {
           </Grid>
         </Grid>
       </Box>
-        {/* <div className='w-full h-full  bg-gradient-to-b from-secondary-1 via-secondary-1 to-secondary-2 flex justify-evenly items-center'>
-          <NavLink className='w-1/4 h-1/4 bg-blue-50 flex justify-center items-center' to='createseller'>
-            Seller
-          </NavLink>
-          <NavLink className='w-1/4 h-1/4 bg-blue-50 flex justify-center items-center' to='buyer'>Buyer</NavLink>
-        </div> */}
     </div>
     </>
   )
@@ -105,9 +99,10 @@ const useStyles = makeStyles((theme) => ({
   heroBox: {
     width: '100%',
     display: 'flex',
-    minHeight: '600px',
+    minHeight: '730px',
     alignItems: 'center',
     justifyContent: 'center',
+    background: '#d4d8f0',
   },
   gridContainer: {
     display: 'flex',

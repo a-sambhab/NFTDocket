@@ -20,6 +20,8 @@ module.exports = {
         2: '#8860D0',
         3: '#C1C8E4'
       },
+      'tertiary': '#eebbc3',
+      
       },
     },
   },

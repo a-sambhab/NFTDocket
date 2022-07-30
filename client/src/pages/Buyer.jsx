@@ -5,14 +5,14 @@ import Web3Context from '../contexts'
 
 function Navbutton(props) {
   return(
-    <a href={props.link} className='text-white text-xl w-5/6 h-fit py-4 mt-4 ml-11 hover:bg-secondary-1 active:bg-secondary-1 text-center rounded-l-xl'>{props.content}</a>
+    <a href={props.link} className='text-white text-xl w-5/6 h-fit py-4 mt-4 ml-11 hover:bg-new-secondary hover:text-black active:bg-secondary-1 text-center rounded-l-xl'>{props.content}</a>
   );
 }
 
 function WarrantyCount(props) {
   return(
     <>
-      <div className='w-1/4 h-10  bg-secondary-3 flex justify-center items-center rounded-3xl'>{props.head}: {props.count}</div>
+      <div className='w-1/4 h-10 border-2 border-black bg-secondary-3 flex justify-center items-center rounded-3xl'>{props.head}: {props.count}</div>
     </>
   );
 }
@@ -20,7 +20,7 @@ function WarrantyCount(props) {
 function ActiveWarranty(props) {
   return(
     <>
-      <NavLink to={`/warranty/${props.id}`} className='bg-secondary-3 mx-16 h-14 flex justify-between items-center rounded-2xl text-xl my-2'>
+      <NavLink to={`/warranty/${props.id}`} className='bg-secondary-3 hover:bg-tertiary border-2 border-black mx-16 h-14 flex justify-between items-center rounded-2xl text-xl my-2'>
         <div className='flex justify-center items-center pl-5'>
           <img className='w-10 h-10 rounded-full' src={props.img}/>
           <span className='px-3'>{props.name}</span>
@@ -35,7 +35,7 @@ function ActiveWarranty(props) {
 function ExpiredWarranty(props){
   return(
     <>
-      <NavLink to={`/warranty/${props.id}`} className='bg-secondary-3 mx-16 h-14 flex justify-between items-center rounded-2xl text-xl my-2'>
+      <NavLink to={`/warranty/${props.id}`} className='bg-secondary-3 hover:bg-tertiary border-2 border-black mx-16 h-14 flex justify-between items-center rounded-2xl text-xl my-2'>
         <div className='flex justify-center items-center pl-5'>
           <img className='w-10 h-10 rounded-full' src={props.img}/>
           <span className='px-3'>{props.name}</span>
@@ -49,7 +49,7 @@ function ExpiredWarranty(props){
 function PendingWarranty(props) {
   return(
     <>
-      <NavLink to={`/approve/${props.id}`} className='bg-secondary-3 mx-16 h-14 flex justify-between items-center rounded-2xl text-xl my-2'>
+      <NavLink to={`/approve/${props.id}`} className='bg-secondary-3 hover:bg-tertiary border-2 border-black mx-16 h-14 flex justify-between items-center rounded-2xl text-xl my-2'>
         <div className='flex justify-center items-center pl-5'>
           <img className='w-10 h-10 rounded-full' src={props.img}/>
           <span className='px-3'>{props.name}</span>
@@ -77,8 +77,8 @@ function Buyer() {
           <div className='text-2xl text-center'>David's Warranty Log</div>
         </div>
       </div>
-      <div className='main w-5/6 h-fit min-h-screen bg-gradient-to-b from-secondary-1 via-secondary-1 to-secondary-2'>
-        <div className='flex justify-between items-center h-fit py-4'>
+      <div className='main w-5/6 h-fit min-h-screen bg-new-secondary'>
+        <div className='flex justify-between items-center h-fit py-4 bg-new text-white'>
           <span className='text-2xl ml-12'>Dashboard</span>
           {   account.currentAccount==null  ?    ( <div className='cursor-pointer text-white bg-secondary-2 mr-20 w-40 h-10 text-center rounded-xl pt-2' onClick={connectWallet}>+ Connect Wallet</div>
 ):(<div className="mr-8">Hey,{' '}
@@ -93,13 +93,14 @@ function Buyer() {
           <WarrantyCount head="Expired Warranties" count="23"/>
         </div>
         <div id='pending'>
-          <div className='text-2xl pl-12'>
-            Pending Warranty
+          <div className='text-xl pl-12 mt-10 mb-5 flex justify-evenly items-baseline'>
+            <div className='w-44 font-medium'>Pending Warranty</div>
+            <div className='w-5/6 h-px bg-black mr-20'></div>
           </div>
-          <div className='text-xl flex justify-between mx-24 items-center h-20'>
-            <span>Customer</span>
-            <span>Status</span>
-            <span>Order ID</span>
+          <div className='text-xl flex justify-between border-2 border-black items-center bg-secondary-3 mx-16 h-14 rounded-full my-2 px-7'>
+            <span className='font-bold'>Customer</span>
+            <span className='font-bold'>Status</span>
+            <span className='font-bold'>Order ID</span>
           </div>
           <div className='flex flex-col justify-evenly'>
             <PendingWarranty img="https://res.cloudinary.com/dgy8ybeoy/image/upload/v1658402368/6df919637ea1e3a6bf7f6b98022b3b62_npgxgf.jpg" name="Albert Chaini" status="Pending" id="1547854335"/>
@@ -107,14 +108,15 @@ function Buyer() {
           </div>
         </div>
         <div id="active">
-          <div className='text-2xl pl-12'>
-            Active Warranty
+          <div className='text-xl pl-12 mt-10 mb-5 flex justify-evenly items-baseline'>
+            <div className='w-40 font-medium'>Active Warranty</div>
+            <div className='w-5/6 h-px bg-black mr-20'></div>
           </div>
-          <div className='text-xl flex justify-between mx-24 items-center h-20'>
-            <span>Customer</span>
-            <span>Status</span>
-            <span>Expiry Date</span>
-            <span>Order ID</span>
+          <div className='text-xl flex justify-between items-center border-2 border-black bg-secondary-3 mx-16 h-14 rounded-full my-2 px-7'>
+            <span className='font-bold'>Customer</span>
+            <span className='font-bold'>Status</span>
+            <span className='font-bold'>Expiry Date</span>
+            <span className='font-bold'>Order ID</span>
           </div>
           <div className='flex flex-col justify-evenly'>
             <ActiveWarranty img="https://res.cloudinary.com/dgy8ybeoy/image/upload/v1658402368/6df919637ea1e3a6bf7f6b98022b3b62_npgxgf.jpg" name="Albert Chaini" status="Active" id="1547854335" expiry="23-02-2023"/>
@@ -122,13 +124,14 @@ function Buyer() {
           </div>
         </div>
         <div id="expired">
-          <div className='text-2xl pl-12'>
-            Expired Warranty
+          <div className='text-xl pl-12 mt-10 mb-5 flex  justify-evenly items-baseline'>
+            <div className='w-44 font-medium'>Expired Warranty</div>
+            <div className='w-5/6 h-px bg-black mr-20'></div>
           </div>
-          <div className='text-xl flex justify-between mx-24 items-center h-20'>
-            <span>Customer</span>
-            <span>Status</span>
-            <span>Order ID</span>
+          <div className='text-xl flex justify-between border-2 border-black items-center bg-secondary-3 mx-16 h-14 rounded-full my-2 px-7'>
+            <span className='font-bold'>Customer</span>
+            <span className='font-bold'>Status</span>
+            <span className='font-bold'>Order ID</span>
           </div>
           <div className='flex flex-col justify-evenly'>
             <ExpiredWarranty img="https://res.cloudinary.com/dgy8ybeoy/image/upload/v1658402368/6df919637ea1e3a6bf7f6b98022b3b62_npgxgf.jpg" name="Albert Chaini" status="Expired" id="1547854335"/>

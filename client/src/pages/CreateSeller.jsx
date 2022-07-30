@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Navigate, NavLink, useNavigate} from "react-router-dom";
 import Web3Context from "../contexts";
 import { createSeller } from "../contexts/useContract/writeContract";
 
@@ -7,14 +7,16 @@ import Navbar from "../components/Navbar";
 
 function CreateSeller() {
   const [sellerId, setSellerId] = useState("");
+  const history = useNavigate();
   const { connectWallet, account, Contract } = useContext(Web3Context);
   useEffect(() => {
     const rand = Math.round(Math.random()*100000);
     setSellerId(rand);
   }, []);
-  const create = () => {
+  const create = async() => {
     //console.log(Contract)
     createSeller(sellerId, Contract, account.currentAccount);
+    history(`/seller/${sellerId}`);
   };
 
   return (

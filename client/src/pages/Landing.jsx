@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 
 function Landing() {
   const { account, sellerI } = useContext(Web3Context);
+  console.log(sellerI)
   
   return (
     <>
@@ -15,7 +16,7 @@ function Landing() {
           <div className="left w-1/2 ml-32">
           <div className="flex flex-col justify-start items-start">
             <div className="title text-4xl text-black ">
-              Warrant in your own style
+              On-Chain Warranties for your Products
             </div>
             <div className="info">We need to warrant everything</div>
             <div className="buttons w-full mt-8 flex justify-start items-center">
@@ -38,7 +39,7 @@ function Landing() {
                 to={`/buyer/${account.currentAccount}`}
                 className="bg-new w-32 text-white p-2 ml-2 text-center rounded-2xl"
               >
-                Buyer
+               Customer
               </NavLink>
               </div>
             </div>

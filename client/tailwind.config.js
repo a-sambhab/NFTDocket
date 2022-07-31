@@ -23,6 +23,9 @@ module.exports = {
       },
       'tertiary': '#E8E8E8',
       'button-col': '#eebbc3',
+      'buyer-background': '#fffffe',
+      'table-header': '#ffc6c7',
+      'table-data': '#faeee7' 
       },
     },
   },

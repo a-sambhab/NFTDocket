@@ -8,6 +8,8 @@ import Warranty from "./pages/Warranty";
 import Web3Context from "./contexts";
 import CreateSeller from "./pages/CreateSeller";
 import CreateNFT from "./pages/CreateNFT";
+import Resell from "./pages/Resell";
+import History from "./pages/History";
 
 function App() {
   window.ethereum&&window.ethereum.on('accountsChanged', function (accounts) {
@@ -28,6 +30,8 @@ function App() {
         <Route path="/buyer/:add" element={<Buyer/>}/>
         <Route path="/createnft/:add" element={<CreateNFT/>}/>
         <Route path="/approve/:warrantyID" element={<Approve/>}/>
+        <Route path="/resell/:id" element={<Resell/>}/>
+        <Route path="/history/:id" element={<History/>}/>
         <Route path="/warranty/:warrantyID" element={<Warranty/>}/>
       </Routes>
     </>

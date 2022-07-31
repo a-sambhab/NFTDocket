@@ -11,7 +11,7 @@ import CreateSeller from "./pages/CreateSeller";
 import CreateNFT from "./pages/CreateNFT";
 import Resell from "./pages/Resell";
 import History from "./pages/History";
-import Footer from "./pages/Footer";
+import Footer from './components/Footer';
 
 function App() {
   window.ethereum&&window.ethereum.on('accountsChanged', function (accounts) {

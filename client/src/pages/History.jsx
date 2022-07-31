@@ -34,7 +34,7 @@ function History() {
           <div className="text-3xl">History</div>
           <div className="text-xl flex justify-evenly items-center bg-table-header w-5/6 py-2 m-5 rounded-2xl">
             <div>Owner Wallet</div>
-            <div>Expiry Date</div>
+            <div>Purchase Date</div>
           </div>
           <div className='flex justify-evenly items-center'>
           <div className='mr-10 flex flex-col justify-around items-center'>

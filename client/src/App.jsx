@@ -32,7 +32,7 @@ function App() {
         <Route path="/buyer/:add" element={<Buyer/>}/>
         <Route path="/createnft/:add" element={<CreateNFT/>}/>
         <Route path="/approve/:warrantyID" element={<Approve/>}/>
-        <Route path="/resell/:id" element={<Resell/>}/>
+        <Route path="/resell/:warrantyID" element={<Resell/>}/>
         <Route path="/history/:warrantyID" element={<History/>}/>
         <Route path="/warranty/:warrantyID" element={<Warranty/>}/>
       </Routes>

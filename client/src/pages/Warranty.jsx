@@ -63,10 +63,10 @@ function Warranty() {
             </a>)}
           </div>
           <div className="w-1/2 flex flex-row justify-center items-center">
-          <NavLink to={`/resell/${data.tokenId}`} className="w-1/3 h-10 flex justify-center items-center bg-new hover:bg-tertiary hover:text-black bottom-2 border-black rounded-xl text-white m-2"
+          {data && (data.status ==2 )&&<NavLink to={`/resell/${data.tokenId}`} className="w-1/3 h-10 flex justify-center items-center bg-new hover:bg-tertiary hover:text-black bottom-2 border-black rounded-xl text-white m-2"
           >
             Resell
-          </NavLink>
+          </NavLink>}
           <NavLink to={`/history/${data.tokenId}`} className="w-1/3 h-10 flex justify-center items-center bg-new hover:bg-tertiary hover:text-black bottom-2 border-black rounded-xl text-white m-2"
           >
             History

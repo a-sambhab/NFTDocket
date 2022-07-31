@@ -23,7 +23,7 @@ function History() {
     setExpiry(date)
   };
 
-  console.log(data.buyers,data.buyersDate);
+  //console.log(data.buyers,data.buyersDate);
 
 
   return (
@@ -45,9 +45,13 @@ function History() {
                 ))}
             </div>
             <div className='flex flex-col justify-between items-center'>
-                {data && data.buyersDate && data.buyersDate.map((dat) => (
-                    <div>{dat}</div>
-                ))}
+                {data && data.buyersDate && data.buyersDate.map((dat) => {
+                  const date = new Date(dat*1000)
+                  //console.log(dat)
+                  return (
+                  
+                    <div>{String(date).slice(4,25)}</div>
+                )})}
             </div>
           </div>
         </div>

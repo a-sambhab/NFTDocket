@@ -2,17 +2,18 @@
 import React, { useState, useContext, useEffect } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import { getWarrantyDetails } from "../contexts/useContract/readContract";
+import { getWarrantyDetails,resell } from "../contexts/useContract/readContract";
 import Web3Context from "../contexts";
 
 function Resell() {
-  const { Contract } = useContext(Web3Context);
+  const { Contract,account } = useContext(Web3Context);
   const { warrantyID } = useParams();
   const [data, setData] = useState("");
   const [expiry,setExpiry]=useState("");
   useEffect(() => {
     getDetails();
   }, [Contract]);
+  const [to,setCustomer]=useState("");
 
   const getDetails = async () => {
     const res = await getWarrantyDetails(Contract, warrantyID);
@@ -21,6 +22,12 @@ function Resell() {
     const date = new Date(res.expiry*1000);
     setExpiry(date)
   };
+  const handleCustomer= (event) => {
+    setCustomer(() => ([event.target.name] = event.target.value));
+  };
+  const resell = async()=>{
+    const res = await resell(Contract,to,warrantyID,Math.round(warrantyID/1000),account.currentAccount)
+  }
   return (
     <>
       <div className="w-screen h-screen">
@@ -52,7 +59,7 @@ function Resell() {
                       5
                   )}`}
                 </span>
-                <input placeholder='Enter Buyer Wallet ID' type="text" className='w-2/3 m-4 p-2 rounded-lg' />
+                <input placeholder='Enter Buyer Wallet ID' type="text" className='w-2/3 m-4 p-2 rounded-lg' onChange={handleCustomer} />
                 <span className="w-full text-xl text-center">
                   <span className="font-semibold">Expiry Date:</span>
                   {data && String(expiry).slice(3,25)}

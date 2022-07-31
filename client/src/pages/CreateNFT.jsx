@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, {useState,useContext} from 'react'
 import { NavLink, useParams } from 'react-router-dom'
 import client from '../utils/ipfs'
@@ -46,7 +47,7 @@ function CreateNFT() {
           .then((data) => {
             const res = data.url
             setCoverImageURI(res);
-            console.log(res)
+            // console.log(res)
            // uri = data.url
             //console.log('Image Uploaded')
             alert("Image Uploaded");
@@ -81,8 +82,8 @@ function CreateNFT() {
         const result = await client.add(JSON.stringify(obj));
         const str = 'ipfs://';
         const finalResult = str.concat(String(result.path));
-        console.log(result)
-       console.log(finalResult);
+        // console.log(result)
+      //  console.log(finalResult);
        createNFT(Contract,finalResult,sellerI,productId,customer.toLowerCase(),expiry,res,account.currentAccount);
         
         alert('NFT Data added');

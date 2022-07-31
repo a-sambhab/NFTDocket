@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState, useContext, useEffect } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
@@ -61,6 +62,7 @@ function Warranty() {
               See at OpenSea
             </a>)}
           </div>
+          <div className="w-1/2 flex flex-row justify-center items-center">
           <NavLink to={`/resell/${data.tokenId}`} className="w-1/3 h-10 flex justify-center items-center bg-new hover:bg-tertiary hover:text-black bottom-2 border-black rounded-xl text-white m-2"
           >
             Resell
@@ -69,6 +71,7 @@ function Warranty() {
           >
             History
           </NavLink>
+          </div>
         </div>
         
       </div>

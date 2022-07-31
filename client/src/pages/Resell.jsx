@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState, useContext, useEffect } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";

@@ -89,7 +89,7 @@ function Seller() {
 
   return (
     <>
-      <div className="flex w-screen h-fit min-h-screen bg-new overflow-x-hidden">
+      <div className="flex w-screen h-fit mb-10 min-h-screen bg-new overflow-x-hidden">
         <div className="sidebar w-1/6 h-full flex flex-col items-center">
           <NavLink
             to="/"

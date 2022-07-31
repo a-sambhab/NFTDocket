@@ -88,7 +88,7 @@ function CreateNFT() {
        await createNFT(Contract,finalResult,sellerI,productId,customer.toLowerCase(),expiry,res,account.currentAccount);
         alert('NFT created')
         setTimeout(function () {
-          window.location.href = `seller/${account.currentAccount}`;
+          window.location.href = `/seller/${account.currentAccount}`;
         }, 4000);
       
         

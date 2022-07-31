@@ -47,7 +47,7 @@ function Warranty() {
   const claiming = async()=>{
     await claim(Contract,account.currentAccount,Math.round(warrantyID/ 1000000),warrantyID);
     setTimeout(function () {
-        window.location.href = `buyer/${account.currentAccount}`;
+        window.location.href = `/buyer/${account.currentAccount}`;
       }, 4000);
   }
   return (

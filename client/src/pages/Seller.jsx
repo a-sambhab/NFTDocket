@@ -137,12 +137,13 @@ function Seller() {
               </div>
             )}{" "}
           </div>
-          {/* <div className="w-full h-1/6 flex  items-center justify-evenly my-4">
-            <button className='w-1/4 bg-secondary-3'>Active Warranties: 23</button>
+          <div className="w-full h-1/6 flex  items-center justify-start ml-20 text-xl font-bold my-4">
+            Seller ID: {sellerI}
+            {/* <button className='w-1/4 bg-secondary-3'>Active Warranties: 23</button>
             <WarrantyCount head="Active Warranties" count="23" />
             <WarrantyCount head="Pending Warranties" count="23" />
-            <WarrantyCount head="Expired Warranties" count="23" />
-          </div> */}
+            <WarrantyCount head="Expired Warranties" count="23" /> */}
+          </div>
           <div id="pending">
           <div className="text-xl pl-12 mt-10 mb-5 flex justify-evenly items-baseline">
               <div className="w-48 font-medium">Pending Warranty</div>

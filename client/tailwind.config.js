@@ -18,10 +18,11 @@ module.exports = {
       'secondary': {
         1: '#84CEEB',
         2: '#8860D0',
-        3: '#C1C8E4'
+        3: '#C1C8E4',
+        4: '#fffffe',
       },
-      'tertiary': '#eebbc3',
-      
+      'tertiary': '#E8E8E8',
+      'button-col': '#eebbc3',
       },
     },
   },

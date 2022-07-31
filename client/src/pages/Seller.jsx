@@ -19,7 +19,7 @@ function WarrantyCount(props) {
 function PendingWarranty(props) {
   return(
     <>
-      <NavLink to={`/approve/${props.id}`} className='bg-secondary-3 hover:bg-tertiary border-2 border-black mx-16 h-14 flex justify-between items-center rounded-full text-xl my-2'>
+      <NavLink to={`/approve/${props.id}`} className='bg-secondary-4 hover:bg-tertiary border-2 hover:border-black mx-16 h-14 flex justify-between items-center rounded-full text-xl my-2'>
         <div className='flex justify-center items-center pl-5'>
           <img className='w-10 h-10 rounded-full' src={props.img}/>
           <span className='px-3'>{props.name}</span>
@@ -33,7 +33,7 @@ function PendingWarranty(props) {
 function ActiveWarranty(props) {
   return(
     <>
-      <NavLink to={`/warranty/${props.id}`} className='bg-secondary-3 hover:bg-tertiary border-2 border-black mx-16 h-14 flex justify-between items-center rounded-full text-xl my-2'>
+      <NavLink to={`/warranty/${props.id}`} className='bg-secondary-4 hover:bg-tertiary border-2 hover:border-black mx-16 h-14 flex justify-between items-center rounded-full text-xl my-2'>
         <div className='flex justify-center items-center pl-5'>
           <img className='w-10 h-10 rounded-full' src={props.img}/>
           <span className='px-3'>{props.name}</span>
@@ -48,7 +48,7 @@ function ActiveWarranty(props) {
 function ExpiredWarranty(props){
   return(
     <>
-      <NavLink to={`/warranty/${props.id}`} className='bg-secondary-3 hover:bg-tertiary border-2 border-black mx-16 h-14 flex justify-between items-center rounded-full text-xl my-2'>
+      <NavLink to={`/warranty/${props.id}`} className='bg-secondary-4 hover:bg-tertiary border-2 hover:border-black mx-16 h-14 flex justify-between items-center rounded-full text-xl my-2'>
         <div className='flex justify-center items-center pl-5'>
           <img className='w-10 h-10 rounded-full' src={props.img}/>
           <span className='px-3'>{props.name}</span>

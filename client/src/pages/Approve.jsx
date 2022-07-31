@@ -25,7 +25,7 @@ function Approve() {
                     </div>
                 </div>
             </div>
-            <button className='w-1/3 h-10 bg-new hover:bg-tertiary hover:text-black bottom-2 border-black rounded-xl text-white m-2' onclick = {Verify}>Verify</button>
+            <button className='w-1/3 h-10 bg-button-col hover:bg-button-col hover:text-black bottom-2 border-black rounded-xl text-black m-2' onclick = {Verify}>Verify</button>
         </div>
     </div>
     </>

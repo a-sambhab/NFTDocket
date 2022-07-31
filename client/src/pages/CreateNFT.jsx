@@ -97,7 +97,7 @@ function CreateNFT() {
     <>
     <div className='w-screen h-screen'>
         <div className='w-full h-12 bg-new fixed'>
-            <NavLink to='/' className='text-white font-bold text-2xl w-full pt-2 pl-2 h-fit flex justify-center items-center'>NFTWeb</NavLink>
+            <NavLink to='/' className='text-white font-bold text-2xl w-full pt-2 pl-2 h-fit flex justify-center items-center'>NFTDocket</NavLink>
         </div>
         <div className='w-full h-full bg-new-secondary flex justify-center items-center overflow-auto'>
             <div className='w-1/2 min-h-1/2 h-fit flex justify-start items-center flex-col bg-new py-8 mt-32 rounded-xl'>

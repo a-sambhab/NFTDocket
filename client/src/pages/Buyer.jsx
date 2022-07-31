@@ -12,7 +12,7 @@ function Navbutton(props) {
   return (
     <a
       href={props.link}
-      className="text-white hover:text-black text-xl w-5/6 h-fit py-4 mt-4 ml-11 hover:bg-new-secondary active:bg-new-secondary text-center rounded-l-xl"
+      className="text-white hover:text-black text-lg w-5/6 h-fit py-4 mt-4 ml-11 hover:bg-new-secondary active:bg-new-secondary text-center pr-2 rounded-l-xl"
     >
       {props.content}
     </a>
@@ -101,7 +101,7 @@ function Seller() {
   return (
     <>
       <div className="flex w-screen h-fit min-h-screen bg-new overflow-x-hidden mb-10">
-        <div className="sidebar w-1/6 h-full flex flex-col items-center">
+        <div className="sidebar w-1/6 h-full flex flex-col items-end ">
           <NavLink
             to="/"
             className="text-white text-2xl border-b-2 p-4 w-full h-fit flex justify-center items-center font-bold"
@@ -114,10 +114,10 @@ function Seller() {
           <Navbutton link="#expired" content="Expired Warranties" />
           <div className="w-5/6 h-2/6 bg-new-secondary my-20 flex flex-col justify-center items-center rounded-2xl">
             <img
-              className="w-1/2 rounded-full"
+              className="w-1/2 mt-2 rounded-full"
               src="https://res.cloudinary.com/doybtqm8h/image/upload/v1659257792/profile_rlizwd.png"
             />
-            <div className="text-xl text-center font-semibold mt-2">
+            <div className="text-xl mb-2 text-center font-semibold mt-2">
             Your Warranty Logs
             </div>
           </div>
@@ -151,7 +151,7 @@ function Seller() {
           </div> */}
           <div id="pending">
             <div className="text-xl pl-12 mt-10 mb-5 flex justify-evenly items-baseline">
-              <div className="w-44 font-medium">Pending Warranty</div>
+              <div className="w-48 font-medium">Pending Warranty</div>
               <div className="w-5/6 h-px bg-black mr-20"></div>
             </div>
             <div className="text-xl flex justify-between border-2 border-black items-center bg-table-header mx-16 h-14 rounded-full my-2 px-7">

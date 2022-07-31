@@ -11,7 +11,7 @@ function Navbutton(props) {
   return (
     <a
       href={props.link}
-      className="text-white hover:text-black text-xl w-5/6 h-fit py-4 mt-4 ml-11 hover:bg-new-secondary active:bg-new-secondary text-center rounded-l-xl"
+      className="text-white hover:text-black text-xl w-5/6 h-fit py-4 ml-11 hover:bg-new-secondary active:bg-new-secondary text-center rounded-l-xl"
     >
       {props.content}
     </a>
@@ -106,7 +106,7 @@ function Seller() {
           <Navbutton link="#active" content="Active Warranties" />
           <Navbutton link="#pending" content="Pending Warranties" />
           <Navbutton link="#expired" content="Expired Warranties" />
-          <div className="w-5/6 h-2/6 bg-new-secondary my-20 flex flex-col justify-center items-center rounded-2xl">
+          <div className="w-5/6 h-2/6 bg-new-secondary my-10 mb-50 flex flex-col justify-center items-center rounded-2xl">
             <img
               className="w-1/2 mt-3 rounded-full"
               src="https://res.cloudinary.com/doybtqm8h/image/upload/v1659257792/profile_rlizwd.png"
@@ -145,7 +145,7 @@ function Seller() {
           </div> */}
           <div id="pending">
           <div className="text-xl pl-12 mt-10 mb-5 flex justify-evenly items-baseline">
-              <div className="w-44 font-medium">Pending Warranty</div>
+              <div className="w-48 font-medium">Pending Warranty</div>
               <div className="w-5/6 h-px bg-black mr-20"></div>
             </div>
             <div className="text-xl flex justify-between border-2 border-black items-center bg-secondary-3 mx-16 h-14 rounded-full my-2 px-7">

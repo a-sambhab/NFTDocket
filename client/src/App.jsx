@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React,{useEffect,useContext} from "react";
 import { Route, Routes } from "react-router-dom";
 import Approve from "./pages/Approve";
@@ -31,7 +32,7 @@ function App() {
         <Route path="/createnft/:add" element={<CreateNFT/>}/>
         <Route path="/approve/:warrantyID" element={<Approve/>}/>
         <Route path="/resell/:id" element={<Resell/>}/>
-        <Route path="/history/:id" element={<History/>}/>
+        <Route path="/history/:warrantyID" element={<History/>}/>
         <Route path="/warranty/:warrantyID" element={<Warranty/>}/>
       </Routes>
     </>

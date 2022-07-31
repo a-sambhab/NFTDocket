@@ -1,7 +1,31 @@
-import React from 'react'
+/* eslint-disable */
+import React, { useState, useContext, useEffect } from 'react'
 import Navbar from '../components/Navbar'
 
+import { NavLink, useParams } from "react-router-dom";
+import { getWarrantyDetails } from "../contexts/useContract/readContract";
+import Web3Context from "../contexts";
+
 function History() {
+    const { Contract } = useContext(Web3Context);
+  const { warrantyID } = useParams();
+  const [data, setData] = useState("");
+  const [expiry,setExpiry]=useState("");
+  useEffect(() => {
+    getDetails();
+  }, [Contract]);
+
+  const getDetails = async () => {
+    const res = await getWarrantyDetails(Contract, warrantyID);
+    // console.log(res)
+    setData(res);
+    const date = new Date(res.expiry*1000);
+    setExpiry(date)
+  };
+
+  console.log(data.buyers,data.buyersDate);
+
+
   return (
     <>
     <Navbar/>
@@ -11,7 +35,20 @@ function History() {
           <div className="text-xl flex justify-evenly items-center bg-table-header w-5/6 py-2 m-5 rounded-2xl">
             <div>Owner Wallet</div>
             <div>Expiry Date</div>
-            <div>Token Id</div>
+          </div>
+          <div className='flex justify-evenly items-center'>
+          <div className='mr-10 flex flex-col justify-around items-center'>
+                {data && data.buyers && data.buyers.map((dat) => (
+                    <div>{String(dat).slice(0, 9)}...{String(
+                        dat
+    ).slice(String(dat).length - 9)}</div>
+                ))}
+            </div>
+            <div className='flex flex-col justify-between items-center'>
+                {data && data.buyersDate && data.buyersDate.map((dat) => (
+                    <div>{dat}</div>
+                ))}
+            </div>
           </div>
         </div>
     </div>

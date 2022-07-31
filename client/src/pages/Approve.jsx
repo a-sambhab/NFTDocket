@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState, useContext, useEffect } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
@@ -19,7 +20,7 @@ function Warranty() {
      //console.log(res.verifyHash)
     setData(res);
     //console.log(data.productId,account.currentAccount)
-    console.log(res.status)
+    // console.log(res.status)
     const date = new Date(res.expiry * 1000);
     setExpiry(date);
   };

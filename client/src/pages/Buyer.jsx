@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import Web3Context from "../contexts";
@@ -87,13 +88,13 @@ function Seller() {
   const [nfts, setNfts] = useState([]);
   //console.log(account.currentAccount)
   useEffect(() => {
-    console.log(add)
+    // console.log(add)
     getData();
    // console.log(nfts);
   }, [Contract, add]);
   const getData = async () => {
     const res =  await buyerDetails(Contract,add);
-    console.log(res)
+    // console.log(res)
     setNfts(res);
   };
 

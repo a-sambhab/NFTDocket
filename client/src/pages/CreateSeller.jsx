@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useContext, useEffect, useState } from "react";
 import { Navigate, NavLink, useNavigate} from "react-router-dom";
 import Web3Context from "../contexts";
@@ -28,18 +29,18 @@ function CreateSeller() {
             <div className="text-xl text-white font-bold">Create Seller Profile</div>
             <form className="w-full h-1/2 flex flex-col justify-evenly items-center">
             <div className="w-full flex flex-col justify-evenly items-center">
-              <label for="wallet" className="w-2/4 p-2 text-white text-left">Seller Wallet Address</label>
+              <label htmlFor="wallet" className="w-2/4 p-2 text-white text-left">Seller Wallet Address</label>
               <input
                 name="wallet"
                 placeholder="Enter Seller Wallet ID"
                 type="text"
                 className="w-2/4 p-2 rounded-md"
                 readOnly
-                value={account.currentAccount}
+                value={account.currentAccount ? account.currentAccount : '0x00'}
               />
               </div>
               <div className="w-full flex flex-col justify-evenly items-center">
-              <label for="seller" className="w-2/4 p-2 text-white text-left">Seller ID</label>
+              <label htmlFor="seller" className="w-2/4 p-2 text-white text-left">Seller ID</label>
               <input
                 name="seller"
                 placeholder="Enter Seller ID"

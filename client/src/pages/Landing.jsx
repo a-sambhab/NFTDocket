@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useContext,useState,useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import Web3Context from "../contexts";
@@ -6,8 +7,7 @@ import Navbar from "../components/Navbar";
 
 function Landing() {
   const { account, sellerI } = useContext(Web3Context);
-  console.log(sellerI)
-  
+
   return (
     <>
       <div>

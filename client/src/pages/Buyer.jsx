@@ -21,7 +21,7 @@ function Navbutton(props) {
 function WarrantyCount(props) {
   return (
     <>
-      <div className="w-1/4 cursor-default h-10 border-2 border-black bg-secondary-3 flex justify-center items-center rounded-full">
+      <div className="w-1/4 cursor-default h-10 border-2 border-black bg-table-header flex justify-center items-center rounded-full">
         {props.head}: {props.count}
       </div>
     </>
@@ -33,7 +33,7 @@ function PendingWarranty(props) {
     <>
       <NavLink
         to={`/Approve/${props.id}`}
-        className="bg-secondary-3 hover:bg-tertiary border-2 border-black mx-16 h-14 flex justify-between items-center rounded-full text-xl my-2"
+        className="bg-table-data border-2 hover:border-black mx-16 h-14 flex justify-between items-center rounded-full text-xl my-2"
       >
         <div className="flex justify-center items-center pl-5">
           <img className="w-10 h-10 rounded-full" src={props.img} />
@@ -50,7 +50,7 @@ function ActiveWarranty(props) {
     <>
       <NavLink
         to={`/warranty/${props.id}`}
-        className="bg-secondary-3 hover:bg-tertiary border-2 border-black mx-16 h-14 flex justify-between items-center rounded-full text-xl my-2"
+        className="bg-table-data border-2 hover:border-black mx-16 h-14 flex justify-between items-center rounded-full text-xl my-2"
       >
         <div className="flex justify-center items-center pl-5">
           <img className="w-10 h-10 rounded-full" src={props.img} />
@@ -68,7 +68,7 @@ function ExpiredWarranty(props) {
     <>
       <NavLink
         to={`/warranty/${props.id}`}
-        className="bg-secondary-3 hover:bg-tertiary border-2 border-black mx-16 h-14 flex justify-between items-center rounded-full text-xl my-2"
+        className="bg-table-data border-2 hover:border-black mx-16 h-14 flex justify-between items-center rounded-full text-xl my-2"
       >
         <div className="flex justify-center items-center pl-5">
           <img className="w-10 h-10 rounded-full" src={props.img} />
@@ -114,14 +114,14 @@ function Seller() {
           <div className="w-5/6 h-2/6 bg-new-secondary my-20 flex flex-col justify-center items-center rounded-2xl">
             <img
               className="w-1/2 rounded-full"
-              src="https://res.cloudinary.com/dgy8ybeoy/image/upload/v1658402368/6df919637ea1e3a6bf7f6b98022b3b62_npgxgf.jpg"
+              src="https://res.cloudinary.com/doybtqm8h/image/upload/v1659257792/profile_rlizwd.png"
             />
             <div className="text-xl text-center font-semibold mt-2">
-           Warranty Log
+            Your Warranty Logs
             </div>
           </div>
         </div>
-        <div className="main w-5/6 h-fit min-h-screen bg-new-secondary">
+        <div className="main w-5/6 h-fit min-h-screen bg-buyer-background">
           <div className="flex justify-between bg-new items-center h-fit py-4">
             <span className="text-2xl ml-12 cursor-default text-white">
               Dashboard
@@ -142,18 +142,18 @@ function Seller() {
               </div>
             )}{" "}
           </div>
-          <div className="w-full h-1/6 flex  items-center justify-evenly my-4">
-            {/* <button className='w-1/4 bg-secondary-3'>Active Warranties: 23</button> */}
+          {/* <div className="w-full h-1/6 flex  items-center justify-evenly my-4">
+            <button className='w-1/4 bg-secondary-3'>Active Warranties: 23</button>
             <WarrantyCount head="Active Warranties" count="23" />
             <WarrantyCount head="Pending Warranties" count="23" />
             <WarrantyCount head="Expired Warranties" count="23" />
-          </div>
+          </div> */}
           <div id="pending">
             <div className="text-xl pl-12 mt-10 mb-5 flex justify-evenly items-baseline">
               <div className="w-44 font-medium">Pending Warranty</div>
-              <div className="w-5/6 h-px bg-black mr-20"></div>
+              <div className="w-4/6 h-px bg-black mr-20"></div>
             </div>
-            <div className="text-xl flex justify-between border-2 border-black items-center bg-secondary-3 mx-16 h-14 rounded-full my-2 px-7">
+            <div className="text-xl flex justify-between border-2 border-black items-center bg-table-header mx-16 h-14 rounded-full my-2 px-7">
               <span className="font-bold">Customer</span>
               <span className="font-bold">Status</span>
               <span className="font-bold">Token Id</span>
@@ -185,7 +185,7 @@ function Seller() {
               <div className="w-40 font-medium">Active Warranty</div>
               <div className="w-5/6 h-px bg-black mr-20"></div>
             </div>
-            <div className="text-xl flex justify-between items-center border-2 border-black bg-secondary-3 mx-16 h-14 rounded-full my-2 px-7">
+            <div className="text-xl flex justify-between items-center border-2 border-black bg-table-header mx-16 h-14 rounded-full my-2 px-7">
               <span className="font-bold">Customer</span>
               <span className="font-bold">Status</span>
               <span className="font-bold">Expiry Date</span>
@@ -221,7 +221,7 @@ function Seller() {
               <div className="w-44 font-medium">Expired Warranty</div>
               <div className="w-5/6 h-px bg-black mr-20"></div>
             </div>
-            <div className="text-xl flex justify-between border-2 border-black items-center bg-secondary-3 mx-16 h-14 rounded-full my-2 px-7">
+            <div className="text-xl flex justify-between border-2 border-black items-center bg-table-header mx-16 h-14 rounded-full my-2 px-7">
               <span className="font-bold">Customer</span>
               <span className="font-bold">Status</span>
               <span className="font-bold">Token Id</span>

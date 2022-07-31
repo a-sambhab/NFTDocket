@@ -100,18 +100,18 @@ function Seller() {
             to={`/createnft/${account.currentAccount}`}
             className="text-white hover:text-black text-xl w-5/6 h-fit py-4 mt-4 ml-11 hover:bg-new-secondary active:bg-new-secondary text-center rounded-l-xl"
           >
-            Create NFT
+            Create Warranty
           </NavLink>
           <Navbutton link="#active" content="Active Warranties" />
           <Navbutton link="#pending" content="Pending Warranties" />
           <Navbutton link="#expired" content="Expired Warranties" />
           <div className="w-5/6 h-2/6 bg-new-secondary my-20 flex flex-col justify-center items-center rounded-2xl">
             <img
-              className="w-1/2 rounded-full"
-              src="https://res.cloudinary.com/dgy8ybeoy/image/upload/v1658402368/6df919637ea1e3a6bf7f6b98022b3b62_npgxgf.jpg"
+              className="w-1/2 mt-3 rounded-full"
+              src="https://res.cloudinary.com/doybtqm8h/image/upload/v1659257792/profile_rlizwd.png"
             />
-            <div className="text-xl text-center font-semibold mt-2">
-            Warranty Log
+            <div className="text-xl mb-3 text-center font-semibold mt-2">
+            Your Warranty Logs
             </div>
           </div>
         </div>
@@ -136,16 +136,16 @@ function Seller() {
               </div>
             )}{" "}
           </div>
-          <div className="w-full h-1/6 flex  items-center justify-evenly my-4">
-            {/* <button className='w-1/4 bg-secondary-3'>Active Warranties: 23</button> */}
+          {/* <div className="w-full h-1/6 flex  items-center justify-evenly my-4">
+            <button className='w-1/4 bg-secondary-3'>Active Warranties: 23</button>
             <WarrantyCount head="Active Warranties" count="23" />
             <WarrantyCount head="Pending Warranties" count="23" />
             <WarrantyCount head="Expired Warranties" count="23" />
-          </div>
+          </div> */}
           <div id="pending">
             <div className="text-xl pl-12 mt-10 mb-5 flex justify-evenly items-baseline">
               <div className="w-44 font-medium">Pending Warranty</div>
-              <div className="w-5/6 h-px bg-black mr-20"></div>
+              <div className="w-4/6 h-px bg-black mr-20"></div>
             </div>
             <div className="text-xl flex justify-between border-2 border-black items-center bg-secondary-3 mx-16 h-14 rounded-full my-2 px-7">
               <span className="font-bold">Customer</span>

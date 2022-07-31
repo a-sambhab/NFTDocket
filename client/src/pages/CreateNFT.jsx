@@ -102,7 +102,7 @@ function CreateNFT() {
                     <input placeholder='Upload Image' type="file" accept='image/*' className='w-2/3 p-2 m-4 block text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400' onChange={showPhoto}/>
                     <input placeholder='Enter Order ID' type="text" className='w-2/3 m-4 p-2 rounded-lg' onChange={handleProductId}/>
                     <input placeholder='Enter Buyer Wallet ID' type="text" className='w-2/3 m-4 p-2 rounded-lg' onChange={handleCustomer}/>
-                    <input type="date" className='w-2/3 m-4 p-2 rounded-lg' onChange={handleExpiry} />
+                    <input type="number" placeholder='validity' className='w-2/3 m-4 p-2 rounded-lg' onChange={handleExpiry} />
                     <NavLink type='submit' className='bg-button-col hover:bg-button-col hover:text-black bottom-2 border-black rounded-xl text-black w-2/3 h-10  m-2 flex justify-center items-center' to='/seller' onClick={UploadImage}>Submit</NavLink>
 
                 </form>

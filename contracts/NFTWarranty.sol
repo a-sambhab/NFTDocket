@@ -8,7 +8,7 @@ contract NFTWarranty is ERC721URIStorage {
     //using Counters for Counters.Counter;
     //Counters.Counter private _tokenIds;
 
-        constructor() ERC721("NFTWarranty", "NFTW") {}
+        constructor() ERC721("NFTDocketWarranty", "NFTDW") {}
 
      struct seller{
         uint256 id;
@@ -143,6 +143,28 @@ contract NFTWarranty is ERC721URIStorage {
      function getBuyersCollection(address add,uint256 index)public view returns(uint256){
         return buyersCollection[add][index];
      }
+
+      function getStatus (uint256 sellerId,uint256 tokenId)external view returns (uint256 stat){
+       if (sellerWarrantyDetails[sellerId][tokenId].status == NFTStatus.Pending)
+       {
+        return 0;
+       }
+       if (sellerWarrantyDetails[sellerId][tokenId].status == NFTStatus.Verified){
+        return 1;
+       }
+        if (sellerWarrantyDetails[sellerId][tokenId].status == NFTStatus.Active){
+        return 2;
+       }
+          if (sellerWarrantyDetails[sellerId][tokenId].status == NFTStatus.Expired){
+        return 3;
+       }
+    }
+    function getSellerNFT(uint256 sellerId,uint256 Index)external view returns(uint256){
+        return allSellers[sellerId].allNFTs[Index];
+    }
+    function getSellerNFTSize(uint256 sellerId)external view returns(uint256){
+        return allSellers[sellerId].allNFTs.length;
+    }
 
 
 

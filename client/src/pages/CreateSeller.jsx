@@ -17,7 +17,7 @@ function CreateSeller() {
   const create = async() => {
     //console.log(Contract)
     await createSeller(sellerId, Contract, account.currentAccount);
-    history(`/seller/${account.currentAccount}`);
+    window.location.href = `seller/${account.currentAccount}`;
   };
 
   return (

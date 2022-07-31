@@ -35,15 +35,20 @@ function Warranty() {
         warrantyID
       
       );
-      if(res===true){
+      if(res){
         alert("You are verified")
+        window.location.reload(false)
       }else{
         alert("Verification Failed")
+        window.location.reload(false)
       }
   };
 
   const claiming = async()=>{
     await claim(Contract,account.currentAccount,Math.round(warrantyID/ 1000000),warrantyID);
+    setTimeout(function () {
+        window.location.href = `buyer/${account.currentAccount}`;
+      }, 4000);
   }
   return (
     <>

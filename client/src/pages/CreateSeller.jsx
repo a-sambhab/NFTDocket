@@ -8,15 +8,15 @@ import Navbar from "../components/Navbar";
 function CreateSeller() {
   const [sellerId, setSellerId] = useState("");
   const history = useNavigate();
-  const { connectWallet, account, Contract } = useContext(Web3Context);
+  const { account, Contract } = useContext(Web3Context);
   useEffect(() => {
     const rand = Math.round(Math.random()*100000);
     setSellerId(rand);
   }, []);
   const create = async() => {
     //console.log(Contract)
-    createSeller(sellerId, Contract, account.currentAccount);
-    history(`/seller/${sellerId}`);
+    await createSeller(sellerId, Contract, account.currentAccount);
+    history(`/seller/${account.currentAccount}`);
   };
 
   return (

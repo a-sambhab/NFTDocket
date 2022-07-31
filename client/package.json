@@ -8,6 +8,8 @@
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^4.0.3",
+    "react-transition-group": "^4.4.3",
+    "ipfs-http-client": "^56.0.1",
     "web3": "^1.7.3"
   },
   "scripts": {

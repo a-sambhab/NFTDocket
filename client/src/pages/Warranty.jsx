@@ -57,7 +57,7 @@ function Warranty() {
                 </span>
               </div>
             </div>
-           { data && (data.status ==2 || data.status == 3)(<a href={`https://testnets.opensea.io/assets/mumbai/0x356b61ae0f9c33461efae4fc184904a5f884f243/${data.tokenId}`} className="text-right mt-5 cursor-pointer underline text-blue-600 hover:text-blue-800 visited:text-purple-600">
+           { data && (data.status ==2 || data.status == 3)&&(<a href={`https://testnets.opensea.io/assets/mumbai/0x356b61ae0f9c33461efae4fc184904a5f884f243/${data.tokenId}`} className="text-right mt-5 cursor-pointer underline text-blue-600 hover:text-blue-800 visited:text-purple-600">
               See at OpenSea
             </a>)}
           </div>

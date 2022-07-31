@@ -124,7 +124,7 @@ function Seller() {
         <div className="main w-5/6 h-fit min-h-screen bg-buyer-background">
           <div className="flex justify-between bg-new items-center h-fit py-4">
             <span className="text-2xl ml-12 cursor-default text-white">
-              Dashboard
+              My Warranties
             </span>
             {account.currentAccount == null ? (
               <div
@@ -154,7 +154,7 @@ function Seller() {
               <div className="w-4/6 h-px bg-black mr-20"></div>
             </div>
             <div className="text-xl flex justify-between border-2 border-black items-center bg-table-header mx-16 h-14 rounded-full my-2 px-7">
-              <span className="font-bold">Customer</span>
+              <span className="font-bold">Your Wallet</span>
               <span className="font-bold">Status</span>
               <span className="font-bold">Token Id</span>
             </div>
@@ -186,7 +186,7 @@ function Seller() {
               <div className="w-5/6 h-px bg-black mr-20"></div>
             </div>
             <div className="text-xl flex justify-between items-center border-2 border-black bg-table-header mx-16 h-14 rounded-full my-2 px-7">
-              <span className="font-bold">Customer</span>
+              <span className="font-bold">Your Wallet</span>
               <span className="font-bold">Status</span>
               <span className="font-bold">Expiry Date</span>
               <span className="font-bold">Token Id</span>
@@ -222,7 +222,7 @@ function Seller() {
               <div className="w-5/6 h-px bg-black mr-20"></div>
             </div>
             <div className="text-xl flex justify-between border-2 border-black items-center bg-table-header mx-16 h-14 rounded-full my-2 px-7">
-              <span className="font-bold">Customer</span>
+              <span className="font-bold">Your Wallet</span>
               <span className="font-bold">Status</span>
               <span className="font-bold">Token Id</span>
             </div>

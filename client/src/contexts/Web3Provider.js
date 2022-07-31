@@ -91,7 +91,7 @@ const Web3Provider = ({ children }) => {
     // console.log(Contract)
     // console.log(acc)
   const res = await sellerId(Contract, acc);
-  console.log(res);
+  //console.log(res);
   setSellerId(res)
 }
 

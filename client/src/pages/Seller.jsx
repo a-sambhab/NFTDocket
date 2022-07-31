@@ -94,7 +94,7 @@ function Seller() {
             to="/"
             className="text-white text-2xl border-b-2 p-4 w-full h-fit flex justify-center items-center font-bold"
           >
-            NFTWeb
+            NFTDocket
           </NavLink>
           <NavLink
             to={`/createnft/${account.currentAccount}`}
@@ -111,7 +111,7 @@ function Seller() {
               src="https://res.cloudinary.com/dgy8ybeoy/image/upload/v1658402368/6df919637ea1e3a6bf7f6b98022b3b62_npgxgf.jpg"
             />
             <div className="text-xl text-center font-semibold mt-2">
-              David's Warranty Log
+            Warranty Log
             </div>
           </div>
         </div>

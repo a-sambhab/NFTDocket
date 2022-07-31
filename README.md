@@ -30,8 +30,8 @@
     The official repository for the website of NFTDocket
     <br />
     <a href="https://nftdocket.vercel.app/">View Live</a>
-<!--     ·
-    <a href="https://www.youtube.com/watch?v=LwG5t0DxFAc">Project Demo</a> -->
+    <br/>
+    <a href="https://youtu.be/avJN4JXVBGM">Project Demo Video</a>
   </p>
 </p>
 
@@ -180,13 +180,12 @@ Once a warranty is activated by a owner in their dashboard the warranty also sho
 
 ## Block Diagram
 
-<img src="https://res.cloudinary.com/dgy8ybeoy/image/upload/v1659291892/NFTDocket_af9a3w.png" alt="Block Diagram" width="100%">
+<img src="https://res.cloudinary.com/dgy8ybeoy/image/upload/v1659308834/NFTDocket_aeca19.png" alt="Block Diagram" width="100%">
 
 ## Screenshots
 
-<img src="images/Screenshot1.png" alt="Logo" width="100%">
-<img src="images/Screenshot2.png" alt="Logo" width="100%">
-<img src="images/Sceenshot3.png" alt="Logo" width="100%">
+<img src="https://res.cloudinary.com/dgy8ybeoy/image/upload/v1659309065/Screenshot_2022-08-01_044029_jrfsck.png" alt="Logo" width="100%">
+<img src="https://res.cloudinary.com/doybtqm8h/image/upload/v1659309329/Screenshot_2022-08-01_044226_lqbgml.png" alt="Logo" width="100%">
 
 ## Future Scope
 

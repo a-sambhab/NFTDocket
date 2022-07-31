@@ -144,9 +144,9 @@ function Seller() {
             <WarrantyCount head="Expired Warranties" count="23" />
           </div> */}
           <div id="pending">
-            <div className="text-xl pl-12 mt-10 mb-5 flex justify-evenly items-baseline">
+          <div className="text-xl pl-12 mt-10 mb-5 flex justify-evenly items-baseline">
               <div className="w-44 font-medium">Pending Warranty</div>
-              <div className="w-4/6 h-px bg-black mr-20"></div>
+              <div className="w-5/6 h-px bg-black mr-20"></div>
             </div>
             <div className="text-xl flex justify-between border-2 border-black items-center bg-secondary-3 mx-16 h-14 rounded-full my-2 px-7">
               <span className="font-bold">Customer</span>

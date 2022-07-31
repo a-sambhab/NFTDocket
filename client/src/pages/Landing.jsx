@@ -46,8 +46,8 @@ function Landing() {
           </div>
           <div className="right w-1/2 h-full flex justify-center items-center">
             <img
-              className="w-2/3"
-              src="https://res.cloudinary.com/sambitsankalp/image/upload/v1655060810/hackathons/image_1_bameyw.png"
+              className="w-96"
+              src="https://res.cloudinary.com/dgy8ybeoy/image/upload/v1659277815/NFTDocket_Hero_mqqvsn.png"
             />
           </div>
         </div>

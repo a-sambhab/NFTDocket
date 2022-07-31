@@ -18,7 +18,7 @@ function Landing() {
             <div className="title text-4xl text-black ">
               On-Chain Warranties for your Products
             </div>
-            <div className="info">We need to warrant everything</div>
+            <div className="info">Free up your cupboard spaces and store your warranties in the digital world in the form of NFTs having proper ownership proof over it. Now the warranty is not a piece of paper but a form of token. Start storing warranties by registering below.</div>
             <div className="buttons w-full mt-8 flex justify-start items-center">
               {sellerI==0 ? (
                 <NavLink

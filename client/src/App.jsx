@@ -11,6 +11,7 @@ import CreateSeller from "./pages/CreateSeller";
 import CreateNFT from "./pages/CreateNFT";
 import Resell from "./pages/Resell";
 import History from "./pages/History";
+import Footer from "./pages/Footer";
 
 function App() {
   window.ethereum&&window.ethereum.on('accountsChanged', function (accounts) {
@@ -35,6 +36,7 @@ function App() {
         <Route path="/history/:warrantyID" element={<History/>}/>
         <Route path="/warranty/:warrantyID" element={<Warranty/>}/>
       </Routes>
+      <Footer/>
     </>
   );
 }

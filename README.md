@@ -30,8 +30,6 @@
     The official repository for the website of NFTDocket
     <br />
     <a href="https://nftdocket.vercel.app/">View Live</a>
-    <br/>
-    <a href="https://youtu.be/avJN4JXVBGM">Project Demo Video</a>
   </p>
 </p>
 
